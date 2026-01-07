@@ -46,8 +46,8 @@ const Home = () => {
             Our Services
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {/* Get Started Card - Dark Green with Call to Action */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-start">
+            {/* Get Started Card - Dark Green with Call to Action - Taller */}
             <Card className="bg-[#6B7F69] text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 rounded-3xl overflow-hidden">
               <CardContent className="p-10 flex flex-col items-center justify-center text-center h-full min-h-[420px]">
                 <h3 className="text-3xl font-bold mb-2">Get Started</h3>
@@ -64,48 +64,42 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            {/* Music Service - Elegant White Card */}
+            {/* Music Service - Elegant White Card - Smaller */}
             <Card className="bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 rounded-3xl overflow-hidden border border-gray-100">
-              <CardContent className="p-10 flex flex-col items-center text-center h-full min-h-[420px] justify-between">
-                <div className="flex-1 flex flex-col items-center justify-center">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-full mb-6 shadow-inner">
-                    <Music className="w-12 h-12 text-[#6B7F69]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Music</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
+              <CardContent className="p-8 flex flex-col items-center text-center h-full min-h-[320px]">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-full mb-5 shadow-inner">
+                  <Music className="w-10 h-10 text-[#6B7F69]" strokeWidth={1.5} />
                 </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Music</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </CardContent>
             </Card>
 
-            {/* Dance Service - Elegant White Card */}
+            {/* Dance Service - Elegant White Card - Smaller */}
             <Card className="bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 rounded-3xl overflow-hidden border border-gray-100">
-              <CardContent className="p-10 flex flex-col items-center text-center h-full min-h-[420px] justify-between">
-                <div className="flex-1 flex flex-col items-center justify-center">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-full mb-6 shadow-inner">
-                    <LayoutGrid className="w-12 h-12 text-[#6B7F69]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Dance</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
+              <CardContent className="p-8 flex flex-col items-center text-center h-full min-h-[320px]">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-full mb-5 shadow-inner">
+                  <LayoutGrid className="w-10 h-10 text-[#6B7F69]" strokeWidth={1.5} />
                 </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Dance</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </CardContent>
             </Card>
 
-            {/* Free Lessons Service - Elegant White Card */}
+            {/* Free Lessons Service - Elegant White Card - Smaller */}
             <Card className="bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 rounded-3xl overflow-hidden border border-gray-100">
-              <CardContent className="p-10 flex flex-col items-center text-center h-full min-h-[420px] justify-between">
-                <div className="flex-1 flex flex-col items-center justify-center">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-full mb-6 shadow-inner">
-                    <GraduationCap className="w-12 h-12 text-[#6B7F69]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Free Lessons</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
+              <CardContent className="p-8 flex flex-col items-center text-center h-full min-h-[320px]">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-full mb-5 shadow-inner">
+                  <GraduationCap className="w-10 h-10 text-[#6B7F69]" strokeWidth={1.5} />
                 </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Free Lessons</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </CardContent>
             </Card>
           </div>
