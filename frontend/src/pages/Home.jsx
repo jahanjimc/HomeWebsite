@@ -40,7 +40,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#f0f4f0]">
         <div className="container mx-auto px-6">
           <h2 className="text-5xl font-bold text-center text-gray-800 mb-20 tracking-wide">
             Our Services
