@@ -31,8 +31,8 @@ const Home = () => {
         {/* Event Banner - Overlapping */}
         <div className="container mx-auto px-6 relative -mt-12">
           <div className="bg-white border-t-4 border-[#6B7F69] py-6 text-center shadow-xl rounded-md max-w-4xl mx-auto">
-            <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Next Event</p>
-            <p className="text-3xl font-bold text-[#6B7F69] tracking-wide">
+            <p className="text-gray-400 text-xs uppercase tracking-wider mb-2">Next Event</p>
+            <p className="text-3xl font-bold text-gray-600 tracking-wide">
               FEB 17th 5:00 PM to 7:00 PM
             </p>
           </div>
