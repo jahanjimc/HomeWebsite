@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Leaf } from 'lucide-react';
+import { Flower2 } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <div className="bg-[#6B7F69] rounded-full p-2">
-              <Leaf className="w-6 h-6 text-white" />
+              <Flower2 className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold tracking-wider text-gray-800">JAHANJI</span>
           </Link>
