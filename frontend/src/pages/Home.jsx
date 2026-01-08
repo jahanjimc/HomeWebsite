@@ -17,9 +17,9 @@ const Home = () => {
       const windowHeight = window.innerHeight;
       
       // Calculate how far the container has scrolled into view
-      // When top of container hits middle of screen, start animation
-      const startPoint = windowHeight * 0.7; // Start when container is 70% into viewport
-      const endPoint = -rect.height + windowHeight * 0.3; // End when container is leaving
+      // Start animation when container is more into viewport
+      const startPoint = windowHeight * 0.5; // Start when container is 50% into viewport
+      const endPoint = -rect.height + windowHeight * 0.5; // End when container is leaving
       
       let progress = 0;
       if (rect.top < startPoint && rect.top > endPoint) {
@@ -41,8 +41,9 @@ const Home = () => {
   // Calculate individual card positions based on scroll progress
   const getCardTransform = (cardIndex) => {
     const totalCards = 4;
-    const cardStartProgress = cardIndex / totalCards;
-    const cardEndProgress = (cardIndex + 1) / totalCards;
+    // Slow down the animation - each card takes more scroll distance
+    const cardStartProgress = cardIndex / (totalCards * 1.5);
+    const cardEndProgress = (cardIndex + 1) / (totalCards * 1.5);
     
     let cardProgress = 0;
     if (scrollProgress > cardStartProgress) {
@@ -50,13 +51,14 @@ const Home = () => {
     }
     
     // Calculate initial offset (starting position below)
-    const initialOffset = cardIndex * 360; // 360px gap between cards initially
+    const initialOffset = cardIndex * 380; // 380px gap between cards initially
     
     // Calculate final position (all stacked at top)
     const finalOffset = 0;
     
-    // Interpolate between initial and final
-    const currentOffset = initialOffset - (cardProgress * initialOffset);
+    // Interpolate between initial and final with easing
+    const easeProgress = cardProgress * cardProgress * (3 - 2 * cardProgress); // Smooth easing
+    const currentOffset = initialOffset - (easeProgress * initialOffset);
     
     return currentOffset;
   };
@@ -86,7 +88,7 @@ const Home = () => {
         </div>
 
         {/* Event Banner - Overlapping */}
-        <div className="container mx-auto px-4 md:px-6 relative -mt-8 md:-mt-12">
+        <div className="container mx-auto px-4 md:px-6 relative -mt-8 md:-mt-12 z-20">
           <div className="bg-white border-t-4 border-[#6B7F69] py-4 md:py-6 text-center shadow-xl rounded-md max-w-4xl mx-auto">
             <p className="text-gray-400 text-xs uppercase tracking-wider mb-1 md:mb-2">Next Event</p>
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 tracking-wide">
@@ -96,8 +98,11 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Spacer for mobile scroll animation */}
+      <div className="lg:hidden h-32 bg-[#f0f4f0]"></div>
+
       {/* Services Section */}
-      <section ref={servicesRef} className="py-16 md:py-24 bg-[#f0f4f0]">
+      <section ref={servicesRef} className="py-16 md:py-24 bg-[#f0f4f0] relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-12 md:mb-20 tracking-wide">
             Our Services
@@ -166,11 +171,11 @@ const Home = () => {
           <div 
             ref={cardsContainerRef}
             className="lg:hidden relative mx-auto max-w-sm"
-            style={{ minHeight: '1800px' }}
+            style={{ minHeight: '2400px' }}
           >
             {/* Get Started Card - Base card */}
             <div 
-              className="sticky top-20 w-full transition-all duration-300 ease-out"
+              className="sticky top-24 w-full transition-all duration-500 ease-out"
               style={{ 
                 transform: `translateY(${getCardTransform(0)}px)`,
                 zIndex: 10
@@ -195,7 +200,7 @@ const Home = () => {
 
             {/* Music Card */}
             <div 
-              className="sticky top-20 w-full transition-all duration-300 ease-out -mt-[360px]"
+              className="sticky top-24 w-full transition-all duration-500 ease-out -mt-[360px]"
               style={{ 
                 transform: `translateY(${getCardTransform(1)}px)`,
                 zIndex: 20
@@ -216,7 +221,7 @@ const Home = () => {
 
             {/* Dance Card */}
             <div 
-              className="sticky top-20 w-full transition-all duration-300 ease-out -mt-[340px]"
+              className="sticky top-24 w-full transition-all duration-500 ease-out -mt-[340px]"
               style={{ 
                 transform: `translateY(${getCardTransform(2)}px)`,
                 zIndex: 30
@@ -237,7 +242,7 @@ const Home = () => {
 
             {/* Free Lessons Card */}
             <div 
-              className="sticky top-20 w-full transition-all duration-300 ease-out -mt-[340px]"
+              className="sticky top-24 w-full transition-all duration-500 ease-out -mt-[340px]"
               style={{ 
                 transform: `translateY(${getCardTransform(3)}px)`,
                 zIndex: 40
