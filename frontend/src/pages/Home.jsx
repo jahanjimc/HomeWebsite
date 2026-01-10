@@ -18,7 +18,7 @@ const Home = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/30 to-white/90" />
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 flex flex-col items-center justify-start md:justify-center text-center px-4 pt-8 md:pt-0">
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-[0.25em] text-[#4f5f4d] mb-4">
               JAHANJI MEDITATION CENTER
             </h1>
