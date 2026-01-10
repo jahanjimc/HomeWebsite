@@ -14,7 +14,7 @@ const Home = () => {
           <img
             src={homeBg}
             alt="Meditation"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[10%_center] md:object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/30 to-white/90" />
 
