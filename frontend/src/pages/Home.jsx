@@ -91,21 +91,21 @@ const Home = () => {
               Introduction <br />
               <span className="text-xs font-normal">(15 Min)</span>
             </>
-          }text = "A gentle opening to ground the body, set intentions, and prepare the mind." />
+          }text = "Ground the body. Set intention. Open the mind." />
           <ServiceCard icon={<Music />}
           title={
             <>
               Music <br />
               <span className="text-xs font-normal">(15 Min)</span>
             </>
-          }text="A calm beginning to arrive fully, set intentions, and ground yourself." />
+          }text="A calm arrival into intention and ground." />
           <ServiceCard icon={<GraduationCap />} 
           title={
             <>
               Silence <br />
               <span className="text-xs font-normal">(15 Min)</span>
             </>
-          }text="A sacred pause. Sit with stillness, observe your breath, and experience clarity beyond words." />
+          }text="A sacred pause of breath and stillness, revealing clarity" />
           <ServiceCard icon={<Users />} 
           title={
             <>
