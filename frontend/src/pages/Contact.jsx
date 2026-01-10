@@ -128,8 +128,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1 text-sm md:text-base">Address</h3>
                       <p className="text-white/90 text-sm md:text-base">
-                        123 Meditation Lane<br />
-                        Peaceful City, PC 12345
+                        Dilsuknagar,
+                        Hyderabad.
                       </p>
                     </div>
                   </div>
@@ -138,7 +138,7 @@ const Contact = () => {
                     <Phone className="w-5 h-5 md:w-6 md:h-6 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold mb-1 text-sm md:text-base">Phone</h3>
-                      <p className="text-white/90 text-sm md:text-base">+1 234 567 8900</p>
+                      <p className="text-white/90 text-sm md:text-base">+91 7207667810</p>
                     </div>
                   </div>
 
@@ -146,7 +146,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 md:w-6 md:h-6 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold mb-1 text-sm md:text-base">Email</h3>
-                      <p className="text-white/90 text-sm md:text-base">info@jahanji.com</p>
+                      <p className="text-white/90 text-sm md:text-base">jahanji.info@gmail.com</p>
                     </div>
                   </div>
                 </div>

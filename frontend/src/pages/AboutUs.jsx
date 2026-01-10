@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, CardContent } from '../components/ui/card';
 import instruc_img from '../assets/instructer_img.jpeg'
+import book_img from '../assets/book_snap.jpg'
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -24,31 +26,58 @@ const AboutUs = () => {
                   
                   <div className="space-y-4 mt-6">
                     <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      Joe Bandra is an unconventional philosopher, a guide with a punchline and a seeker who never stops asking the big questions. With a background in medical physics, healthcare leadership, yoga, and meditation, Joe blends scientific clarity with spiritual depth, offering a rare combination of grounded wisdom, sharp insight, and disarming humor. Educated at both Stanford and Harvard Universities, he brings a rigorous academic foundation to his explorations of self-inquiry and consciousness.
                     </p>
                     <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                    </p>
+                      For over two decades, Joe has walked alongside others through the raw terrain of personal transformation, understanding both the ache of human struggle and the quiet joy of returning to what's always been present-the stillness of our true self. In Finding Nevaeh, Joe weaves storytelling, lived experience, and philosophical inquiry into a journey that is both emotionally honest and spiritually profound. The book's fictional guide, "The Philosopher," mirrors Joe's own approach-not through dogma but through dialogue, not with rigid answers but with questions that invite readers to awaken from the illusion of separation.                     </p>
                     <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
-                    </p>
+                      His teachings draw from traditions such as Advaita Vedanta, Christian mysticism, Sufism, Buddhism, and modern nondualism, all while staying rooted in the everyday messiness of identity, ego, grief, love, fear, and the deep longing to come home to wholeness. For Joe, philosophy isn't merely something to be studied-it's a life to be lived, a daily practice of peeling back illusion and remembering the quiet simplicity of being. He lives near Antioch, Illinois, where conversations run deep, the coffee is strong, and every journey home begins with a single, silent moment of presence.                    </p>
                   </div>
 
                   <div className="mt-8 md:mt-12">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6">BOOKS</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[1, 2, 3, 4].map((book) => (
-                        <div
-                          key={book}
-                          className="bg-gray-200 h-32 md:h-48 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                        >
-                          <div className="w-full h-full flex items-center justify-center text-gray-500 text-sm">
-                            Book {book}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+    BOOK
+  </h3>
+
+  <div className="w-full flex flex-col md:flex-row items-center gap-6 md:gap-10 bg-white rounded-2xl shadow-md p-6 md:p-10">
+
+    {/* Book Image */}
+    <div className="w-full md:w-3/5 flex justify-center">
+      <div className="w-40 h-56 md:w-48 md:h-64 bg-gray-200 rounded-xl shadow-lg flex items-center justify-center text-gray-500 text-sm">
+        <img src={book_img} alt="Book name" className="w-full h-full object-cover rounded-xl" />
+      </div>
+    </div>
+
+    {/* Book Info */}
+    <div className="w-full md:w-3/5 text-center md:text-left">
+      <h4 className="text-xl md:text-2xl font-semibold text-[#4f5f4d] mb-3">
+        Finding Nevaeh
+      </h4>
+
+      <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4">
+        A young woman. A mysterious philosopher. One timeless question.
+
+Lost in the mental noise of modern life, Nevaeh leaves Chicago in search of Ja man rumored to have seen through life’s deepest illusions. By a quiet lake, their meeting becomes less about answers and more about uncovering what has always been there.
+
+Nevaeh’s journey becomes a mirror for our own: Who are we beneath the stories we tell ourselves?
+      </p>
+
+      <p className="text-sm text-gray-500 mb-4">
+        By Jahanji
+      </p>
+
+<Link
+  to="https://www.amazon.co.uk/Finding-Nevaeh-Joe-Bandra/dp/B0FH5WQ531"
+  className="inline-block px-5 py-2 rounded-xl bg-[#6B7F69] text-white text-sm hover:bg-[#5a6b58] transition"
+>
+  Learn More
+</Link>
+
+    </div>
+
+  </div>
+</div>
+
                 </div>
 
                 <div className="flex justify-center md:justify-end order-1 md:order-2">
