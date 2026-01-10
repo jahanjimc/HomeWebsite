@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '../components/ui/card';
+import instruc_img from '../assets/instructer_img.jpeg'
 
 const AboutUs = () => {
   return (
@@ -7,9 +8,9 @@ const AboutUs = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
-            About Our Instructor
+            About Our Jahanji
           </h1>
-          <p className="text-gray-600 text-sm md:text-base">Meet Our Expert</p>
+          <p className="text-gray-600 text-sm md:text-base">Meet Our Author</p>
         </div>
 
         <div className="max-w-6xl mx-auto">
@@ -54,7 +55,7 @@ const AboutUs = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#6B7F69] to-[#8B9F89] rounded-2xl transform rotate-3"></div>
                     <img
-                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400"
+                      src={instruc_img}
                       alt="Instructor Jahanji"
                       className="relative w-56 h-72 md:w-72 md:h-96 object-cover rounded-2xl shadow-xl"
                     />

@@ -44,9 +44,16 @@ const Header = () => {
           </nav>
 
           {/* Button */}
-          <Button className="hidden md:block bg-[#6B7F69] hover:bg-[#5a6b58] text-white px-6 py-2 rounded-xl shadow-sm">
-            Register now
-          </Button>
+          <a 
+            href="https://forms.gle/XfFMvDZT6pQKw7nM9" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden md:block"
+          >
+            <Button className="bg-[#6B7F69] hover:bg-[#5a6b58] text-white px-6 py-2 rounded-xl shadow-sm">
+              Register now
+            </Button>
+          </a>
 
           {/* Mobile */}
           <button
@@ -80,9 +87,15 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-[#6B7F69] hover:bg-[#5a6b58] text-white rounded-xl mt-2">
-                Register now
-              </Button>
+              <a 
+                href="https://forms.gle/XfFMvDZT6pQKw7nM9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full bg-[#6B7F69] hover:bg-[#5a6b58] text-white rounded-xl mt-2">
+                  Register now
+                </Button>
+              </a>
             </nav>
           </div>
         )}

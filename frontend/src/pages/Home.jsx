@@ -54,65 +54,68 @@ const Home = () => {
     Our Services
   </h2>
 
-  <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 border-l border-r border-[#dfe6dd]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
     
-    <div className="
-      grid place-items-center
-      gap-8 lg:gap-14
-      grid-cols-1
-      sm:grid-cols-2
-      lg:grid-cols-3
-      xl:grid-cols-5
-    ">
+    <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-center">
 
-      {/* CTA */}
-      <Card className="
-        w-full sm:w-[280px]
-        bg-[#6B7F69] text-white rounded-3xl shadow-2xl
-        transition-all duration-300 ease-out 
-        hover:-translate-y-3 hover:shadow-3xl
-      ">
-        <CardContent className="p-6 sm:p-7 h-[300px] sm:h-[340px] flex flex-col justify-center text-center">
-          <h3 className="text-lg sm:text-xl font-bold">Get Started</h3>
-          <p className="mt-3 mb-5 text-white/90 text-xs leading-relaxed">
-            Whether new or experienced, Jahanji welcomes you into a space
-            of calm, connection, and growth.
-          </p>
-          <Button className="bg-white text-[#6B7F69] hover:bg-gray-100 rounded-xl text-xs">
-            Get Started Today
-          </Button>
-        </CardContent>
-      </Card>
+      {/* CTA - 30% */}
+      <div className="w-full lg:w-[25%] flex justify-center lg:justify-start">
+        <Card className="
+          w-full sm:w-[280px]
+          bg-[#6B7F69] text-white rounded-3xl shadow-2xl
+          transition-all duration-300 ease-out 
+          hover:-translate-y-3 hover:shadow-3xl
+        ">
+          <CardContent className="p-6 sm:p-7 h-[300px] sm:h-[340px] flex flex-col justify-center text-center">
+            <h3 className="text-lg sm:text-xl font-bold">Get Started</h3>
+            <p className="mt-3 mb-5 text-white/90 text-xs leading-relaxed">
+              Whether new or experienced, Jahanji welcomes you into a space
+              of calm, connection, and growth.
+            </p>
+            <Button 
+              className="bg-white text-[#6B7F69] hover:bg-gray-100 rounded-xl text-xs"
+              onClick={() => window.open('https://forms.gle/XfFMvDZT6pQKw7nM9', '_blank')}
+            >
+              Get Started Today
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
 
-      <ServiceCard icon={<LayoutGrid />} 
-      title={
-        <>
-          Introduction <br />
-          <span className="text-xs font-normal">(15 Min)</span>
-        </>
-      }text = "A gentle opening to ground the body, set intentions, and prepare the mind." />
-      <ServiceCard icon={<Music />}
-      title={
-        <>
-          Music <br />
-          <span className="text-xs font-normal">(15 Min)</span>
-        </>
-      }text="A calm beginning to arrive fully, set intentions, and ground yourself." />
-      <ServiceCard icon={<GraduationCap />} 
-      title={
-        <>
-          Silence <br />
-          <span className="text-xs font-normal">(15 Min)</span>
-        </>
-      }text="A sacred pause. Sit with stillness, observe your breath, and experience clarity beyond words." />
-      <ServiceCard icon={<Users />} 
-      title={
-        <>
-          Networking <br />
-          <span className="text-xs font-normal">(15 Min)</span>
-        </>
-      }
-      text="Connect with like-minded people." />
+      {/* Service Cards - 70% */}
+      <div className="w-full lg:w-[75%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 place-items-center">
+          <ServiceCard icon={<LayoutGrid />} 
+          title={
+            <>
+              Introduction <br />
+              <span className="text-xs font-normal">(15 Min)</span>
+            </>
+          }text = "A gentle opening to ground the body, set intentions, and prepare the mind." />
+          <ServiceCard icon={<Music />}
+          title={
+            <>
+              Music <br />
+              <span className="text-xs font-normal">(15 Min)</span>
+            </>
+          }text="A calm beginning to arrive fully, set intentions, and ground yourself." />
+          <ServiceCard icon={<GraduationCap />} 
+          title={
+            <>
+              Silence <br />
+              <span className="text-xs font-normal">(15 Min)</span>
+            </>
+          }text="A sacred pause. Sit with stillness, observe your breath, and experience clarity beyond words." />
+          <ServiceCard icon={<Users />} 
+          title={
+            <>
+              Networking <br />
+              <span className="text-xs font-normal">(15 Min)</span>
+            </>
+          }
+          text="Connect with like-minded people." />
+        </div>
+      </div>
 
     </div>
   </div>
