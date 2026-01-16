@@ -16,6 +16,13 @@ const Events = () => {
       subHeading: 'Sub Heading',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       image: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=800'
+    },
+    {
+      id: 3,
+      heading: 'Heading',
+      subHeading: 'Sub Heading',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image: 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=800'
     }
   ];
 

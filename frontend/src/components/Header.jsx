@@ -26,7 +26,7 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium">
             {["/", "/events", "/about", "/contact"].map((path, i) => {
-              const names = ["Home", "Events", "About Us", "Contact"];
+              const names = ["Home", "Events", "About Jahanji", "Contact"];
               return (
                 <Link
                   key={path}
@@ -71,7 +71,7 @@ const Header = () => {
               {[
                 { path: "/", name: "Home" },
                 { path: "/events", name: "Events" },
-                { path: "/about", name: "About Us" },
+                { path: "/about", name: "About Jahanji" },
                 { path: "/contact", name: "Contact" },
               ].map((item) => (
                 <Link
