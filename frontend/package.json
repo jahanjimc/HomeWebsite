@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://ANIRUK007.github.io/ASWQproj",
+  "homepage": "https://jahanjimc.github.io/HomeWebsite",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
