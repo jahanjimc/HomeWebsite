@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/HomeWebsite/static/css/main.fb322b59.css",
+    "main.js": "/HomeWebsite/static/js/main.966eb33e.js",
+    "static/media/logo.png": "/HomeWebsite/static/media/logo.323fc23c1312070ede29.png",
+    "static/media/instructer_img.jpeg": "/HomeWebsite/static/media/instructer_img.fed5206c1446e8ff96a5.jpeg",
+    "static/media/home-background-1.jpg": "/HomeWebsite/static/media/home-background-1.03f0c94b5e1b425f3c40.jpg",
+    "static/media/book_snap.jpg": "/HomeWebsite/static/media/book_snap.c471f9d72e62012db5f4.jpg",
+    "index.html": "/HomeWebsite/index.html",
+    "main.fb322b59.css.map": "/HomeWebsite/static/css/main.fb322b59.css.map",
+    "main.966eb33e.js.map": "/HomeWebsite/static/js/main.966eb33e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb322b59.css",
+    "static/js/main.966eb33e.js"
+  ]
+}
