@@ -95,16 +95,26 @@ const AboutUs = () => {
 Like so many of us, she's grappling with the question that tugs at the core of existence: Who am I? It's not a quiet or facile question; it churns, pushes, and pulls, leaving her suspended between the reality of her physical self and the whirlwind of her inner thoughts. Feeling more adrift than ever, Nevaeh hears about a Philosopher named Joe Bandra, known simply as "J." It is believed that he's cracked the code of existence, uncovered life's secrets, and lives a simple, insightful existence by Salem Lakes, just outside Antioch, Illinois. J is somewhat of an unconventional philosopher with a relaxed presence, known for his piercing clarity in seeing through life's illusions. Nevaeh places a phone call to The Philosopher and receives an invitation to visit. With no other path calling, Nevaeh boards a train, hope-ful that this stranger might help her make sense of the chaos within.
                     </p>
 
-                    <p className="text-sm text-gray-500 mb-4">
-                      By Jahanji
-                    </p>
 
-                    <Link
-                      to="https://www.amazon.co.uk/Finding-Nevaeh-Joe-Bandra/dp/B0FH5WQ531"
-                      className="inline-block px-5 py-2 rounded-xl bg-[#6B7F69] text-white text-sm hover:bg-[#5a6b58] transition"
-                    >
-                      Learn More
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                      <a
+                        href="https://www.amazon.co.uk/Finding-Nevaeh-Joe-Bandra/dp/B0FH5WQ531"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-5 py-2 rounded-xl bg-[#6B7F69] text-white text-sm hover:bg-[#5a6b58] transition text-center"
+                      >
+                        Learn More
+                      </a>
+                      
+                      <a
+                        href="https://www.amazon.co.uk/Finding-Nevaeh-Joe-Bandra/dp/B0FH5WQ531"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-5 py-2 rounded-xl bg-white border-2 border-[#6B7F69] text-[#6B7F69] text-sm hover:bg-[#6B7F69] hover:text-white transition text-center"
+                      >
+                        Buy the Book
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
