@@ -11,15 +11,43 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mbdokyjl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -38,7 +66,7 @@ const Contact = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
             Contact
           </h1>
-          <p className="text-gray-600 mt-2">We’d love to hear from you</p>
+          <p className="text-gray-600 mt-2">We'd love to hear from you</p>
         </div>
 
         {/* Single Form Block */}
@@ -91,9 +119,10 @@ const Contact = () => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 text-base md:text-lg font-semibold"
+                  disabled={isSubmitting}
+                  className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 text-base md:text-lg font-semibold disabled:opacity-50"
                 >
-                  Submit
+                  {isSubmitting ? 'Sending...' : 'Submit'}
                 </Button>
 
               </form>

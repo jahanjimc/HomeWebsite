@@ -14,7 +14,6 @@ const AboutUs = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3">
             Jahanji
           </h1>
-          <p className="text-gray-600 text-sm md:text-base">Meet Our Guru</p>
         </div>
 
         <div className="max-w-6xl mx-auto">
