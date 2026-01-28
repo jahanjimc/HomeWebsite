@@ -26,7 +26,7 @@ const Home = () => {
               YOGA & MEDITATION CENTER
             </h1>
             <p className="max-w-3xl mx-auto text-gray-600 text-sm md:text-base leading-relaxed font-bold">
-              Join Us for Yoga, Guided Meditation, Mindfullness & Celebration
+              Join Us For Yoga, Guided Meditation, Mindfullness & Celebration
             </p>
           </div>
         </div>
