@@ -10,7 +10,7 @@ const Home = () => {
     feb27: true,
     feb28: true,
     mar5: true,
-    mar6: false,
+    mar6: true,
     mar7: true,
   };
 
