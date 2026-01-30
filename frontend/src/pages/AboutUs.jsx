@@ -97,7 +97,7 @@ Like so many of us, she's grappling with the question that tugs at the core of e
 
                     <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                       <a
-                        href="https://www.amazon.co.uk/Finding-Nevaeh-Joe-Bandra/dp/B0FH5WQ531"
+                        href="https://findingnevaeh.org/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block px-5 py-2 rounded-xl bg-[#6B7F69] text-white text-sm hover:bg-[#5a6b58] transition text-center"
