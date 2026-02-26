@@ -7,6 +7,7 @@ import Events from "./pages/Events";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import { Toaster } from "./components/ui/toaster";
+import QandA from "./pages/QandA";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/qa" element={<QandA />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
