@@ -51,7 +51,7 @@ export const eventConfig = {
 
     // --- EVENT 1 ---
     {
-      label: "Thursday, February 26",   // ✏️ Change this date
+      label: "Thursday, February 31",   // ✏️ Change this date
       time:  "5:00 PM - 7:00 PM",       // ✏️ Change this time
       open:  true,                       // ✏️ true = open, false = closed
     },
