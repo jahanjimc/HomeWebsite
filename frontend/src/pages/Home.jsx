@@ -26,18 +26,22 @@ const CONFIG = {
   address: "16-1-143/2RT Saidabad Colony, Opposite Ramalayam Temple, Hyderabad 500059 TS",
 };
 
+// Strips surrounding quotes that Google Sheets adds to CSV values
+const clean = (val) => val?.trim().replace(/^"|"$/g, "").trim() || "";
+
 // Parses the raw CSV text into an array of event objects
 const parseCSV = (csvText) => {
   const lines = csvText.trim().split("\n");
-  const headers = lines[0].split(",").map((h) => h.trim());
+  const headers = lines[0].split(",").map(clean);
   return lines.slice(1).map((line) => {
-    const values = line.split(",").map((v) => v.trim());
+    // Split by comma but respect quoted fields (e.g. "5:00 PM - 7:00 PM")
+    const values = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || [];
     const obj = {};
-    headers.forEach((h, i) => (obj[h] = values[i]));
+    headers.forEach((h, i) => (obj[h] = clean(values[i] || "")));
     return {
       label: obj.label || "",
-      time: obj.time || "",
-      open: obj.open?.toLowerCase() === "true",
+      time:  obj.time  || "",
+      open:  obj.open?.trim().toUpperCase() === "TRUE",
     };
   });
 };
