@@ -86,7 +86,7 @@ export const eventConfig = {
 
     // --- EVENT 6 ---
     {
-      label: "Friday, March 7",
+      label: "Friday, March 8",
       time:  "5:00 PM - 7:00 PM",
       open:  true,
     },

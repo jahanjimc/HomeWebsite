@@ -1,11 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 
-import { eventConfig } from "./eventConfig";
+// ============================================================
+//  📋 GOOGLE SHEET CSV URL
+//  Replace the URL below with your published Google Sheet CSV link.
+//  How to get it:
+//    1. Open your Google Sheet
+//    2. File → Share → Publish to web
+//    3. Choose the sheet → publish as CSV
+//    4. Copy the URL and paste it below
+// ============================================================
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcYP-blT09nvxlqwtRI2VCTuVPJn8IxVGP32t0B4YegSpaIIIE0BZPgBOd_0tCsv1SzNruCRUH1BuV/pub?gid=0&single=true&output=csv";
+
+// ============================================================
+//  ⚙️  STATIC SETTINGS (change these directly here)
+//  These don't change often so no need to put them in the sheet
+// ============================================================
+const CONFIG = {
+  capacity: 35,
+  language: "English",
+  mapsLink: "https://maps.app.goo.gl/sW3JE1YKhsMDby9XA",
+  formLink: "https://forms.gle/XfFMvDZT6pQKw7nM9",
+  address: "16-1-143/2RT Saidabad Colony, Opposite Ramalayam Temple, Hyderabad 500059 TS",
+};
+
+// Parses the raw CSV text into an array of event objects
+const parseCSV = (csvText) => {
+  const lines = csvText.trim().split("\n");
+  const headers = lines[0].split(",").map((h) => h.trim());
+  return lines.slice(1).map((line) => {
+    const values = line.split(",").map((v) => v.trim());
+    const obj = {};
+    headers.forEach((h, i) => (obj[h] = values[i]));
+    return {
+      label: obj.label || "",
+      time: obj.time || "",
+      open: obj.open?.toLowerCase() === "true",
+    };
+  });
+};
 
 const Home = () => {
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    fetch(SHEET_CSV_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch");
+        return res.text();
+      })
+      .then((text) => {
+        setEvents(parseCSV(text));
+        setLoading(false);
+      })
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#f7faf6]">
 
@@ -30,45 +87,60 @@ const Home = () => {
               Upcoming Events
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
-              {eventConfig.events.map((event, index) => (
-                <div
-                  key={index}
-                  className={`rounded-lg p-3 ${event.open ? "bg-[#f0f4f0]" : "bg-gray-200 opacity-60"}`}
-                >
-                  <p className="text-base md:text-lg font-extrabold text-[#6B7F69]">
-                    {event.label}
-                  </p>
-                  <p className="text-sm font-semibold text-[#6B7F69]">
-                    {event.time}
-                  </p>
-                  <p className={`text-xs mt-1 font-bold ${event.open ? "text-green-600" : "text-red-600"}`}>
-                    {event.open ? "Registrations Open" : "Registrations Closed"}
-                  </p>
-                </div>
-              ))}
-            </div>
+            {/* LOADING STATE */}
+            {loading && (
+              <p className="text-sm text-gray-400 py-6">Loading events...</p>
+            )}
+
+            {/* ERROR STATE */}
+            {error && (
+              <p className="text-sm text-red-500 py-6">
+                Could not load events. Please try again later.
+              </p>
+            )}
+
+            {/* EVENTS GRID */}
+            {!loading && !error && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+                {events.map((event, index) => (
+                  <div
+                    key={index}
+                    className={`rounded-lg p-3 ${event.open ? "bg-[#f0f4f0]" : "bg-gray-200 opacity-60"}`}
+                  >
+                    <p className="text-base md:text-lg font-extrabold text-[#6B7F69]">
+                      {event.label}
+                    </p>
+                    <p className="text-sm font-semibold text-[#6B7F69]">
+                      {event.time}
+                    </p>
+                    <p className={`text-xs mt-1 font-bold ${event.open ? "text-green-600" : "text-red-600"}`}>
+                      {event.open ? "Registrations Open" : "Registrations Closed"}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
 
             <p className="text-sm mt-3 font-bold text-[#6B7F69]">
-              {eventConfig.capacity} Members (first come first serve basis)
+              {CONFIG.capacity} Members (first come first serve basis)
             </p>
             <p className="text-sm mt-1 font-medium text-[#6B7F69]">
-              Session's Language: {eventConfig.language}
+              Session's Language: {CONFIG.language}
             </p>
 
             <a
-              href={eventConfig.mapsLink}
+              href={CONFIG.mapsLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-3 text-sm text-gray-600 hover:text-[#6B7F69] transition-colors cursor-pointer"
             >
               <MapPin className="w-4 h-4" />
-              <span>{eventConfig.address}</span>
+              <span>{CONFIG.address}</span>
             </a>
 
             <div className="mt-5">
               <a
-                href={eventConfig.formLink}
+                href={CONFIG.formLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -93,19 +165,5 @@ const Home = () => {
     </div>
   );
 };
-
-/* SERVICE CARD */
-const ServiceCard = ({ icon, title, text, width = "200px", height = "200px" }) => (
-  <Card
-    style={{ width, height }}
-    className="bg-white rounded-2xl shadow-xl flex items-center justify-center transition-all duration-300 ease-out hover:-translate-y-3 hover:shadow-2xl"
-  >
-    <CardContent className="p-5 text-center flex flex-col justify-center h-full">
-      <div className="w-8 h-8 mx-auto text-[#6B7F69]">{icon}</div>
-      <h3 className="mt-2 text-sm font-semibold">{title}</h3>
-      <p className="mt-1 text-xs text-gray-600 leading-relaxed">{text}</p>
-    </CardContent>
-  </Card>
-);
 
 export default Home;
